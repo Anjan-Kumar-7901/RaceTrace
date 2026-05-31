@@ -29,6 +29,240 @@
 </head>
 <body>
 
+<!-- ==========================
+     ONBOARDING
+========================== -->
+
+<div id="onboardingOverlay">
+
+
+
+  <div class="onboard-screen active" id="step1">
+
+    <div class="onboard-card">
+
+      <div class="onboard-logo">
+        Race Trace
+      </div>
+
+      <div class="onboard-sub">
+        Formula 1 Intelligence Dashboard
+      </div>
+
+      <div class="onboard-title">
+        What's your name?
+      </div>
+
+      <input
+        id="userName"
+        type="text"
+        maxlength="20"
+        placeholder="Enter your name"
+      >
+
+      <button id="continueBtn">
+        Continue →
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="onboard-screen" id="step2">
+
+    <div class="driver-header">
+
+      <div class="driver-title">
+        PICK YOUR DRIVER
+      </div>
+
+      <div class="driver-subtitle">
+        Your driver will be highlighted across Race Trace
+      </div>
+
+    </div>
+
+    <div class="driver-grid">
+
+        <!-- Mercedes -->
+        <div class="driver-pick-card" data-driver="Kimi Antonelli" style="--driver-color: var(--mercedes);">
+            <span class="code">ANT</span>
+            <span class="name">Kimi Antonelli</span>
+            <span class="team">Mercedes</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="George Russell" style="--driver-color: var(--mercedes);">
+            <span class="code">RUS</span>
+            <span class="name">George Russell</span>
+            <span class="team">Mercedes</span>
+        </div>
+
+        <!-- Ferrari -->
+        <div class="driver-pick-card" data-driver="Charles Leclerc" style="--driver-color: var(--ferrari);">
+            <span class="code">LEC</span>
+            <span class="name">Charles Leclerc</span>
+            <span class="team">Ferrari</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Lewis Hamilton" style="--driver-color: var(--ferrari);">
+            <span class="code">HAM</span>
+            <span class="name">Lewis Hamilton</span>
+            <span class="team">Ferrari</span>
+        </div>
+
+        <!-- McLaren -->
+        <div class="driver-pick-card" data-driver="Lando Norris" style="--driver-color: var(--mclaren);">
+            <span class="code">NOR</span>
+            <span class="name">Lando Norris</span>
+            <span class="team">McLaren</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Oscar Piastri" style="--driver-color: var(--mclaren);">
+            <span class="code">PIA</span>
+            <span class="name">Oscar Piastri</span>
+            <span class="team">McLaren</span>
+        </div>
+
+        <!-- Red Bull -->
+        <div class="driver-pick-card" data-driver="Max Verstappen" style="--driver-color: var(--redbull);">
+            <span class="code">VER</span>
+            <span class="name">Max Verstappen</span>
+            <span class="team">Red Bull</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Isack Hadjar" style="--driver-color: var(--redbull);">
+            <span class="code">HAD</span>
+            <span class="name">Isack Hadjar</span>
+            <span class="team">Red Bull</span>
+        </div>
+
+        <!-- Racing Bulls -->
+        <div class="driver-pick-card" data-driver="Liam Lawson" style="--driver-color: var(--racingbulls);">
+            <span class="code">LAW</span>
+            <span class="name">Liam Lawson</span>
+            <span class="team">Racing Bulls</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Arvid Lindblad" style="--driver-color: var(--racingbulls);">
+            <span class="code">LIN</span>
+            <span class="name">Arvid Lindblad</span>
+            <span class="team">Racing Bulls</span>
+        </div>
+
+        <!-- Williams -->
+        <div class="driver-pick-card" data-driver="Carlos Sainz" style="--driver-color: var(--williams);">
+            <span class="code">SAI</span>
+            <span class="name">Carlos Sainz</span>
+            <span class="team">Williams</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Alexander Albon" style="--driver-color: var(--williams);">
+            <span class="code">ALB</span>
+            <span class="name">Alexander Albon</span>
+            <span class="team">Williams</span>
+        </div>
+
+        <!-- Alpine -->
+        <div class="driver-pick-card" data-driver="Pierre Gasly" style="--driver-color: var(--alpine);">
+            <span class="code">GAS</span>
+            <span class="name">Pierre Gasly</span>
+            <span class="team">Alpine</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Franco Colapinto" style="--driver-color: var(--alpine);">
+            <span class="code">COL</span>
+            <span class="name">Franco Colapinto</span>
+            <span class="team">Alpine</span>
+        </div>
+
+        <!-- Haas -->
+        <div class="driver-pick-card" data-driver="Oliver Bearman" style="--driver-color: var(--haas);">
+            <span class="code">BEA</span>
+            <span class="name">Oliver Bearman</span>
+            <span class="team">Haas</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Esteban Ocon" style="--driver-color: var(--haas);">
+            <span class="code">OCO</span>
+            <span class="name">Esteban Ocon</span>
+            <span class="team">Haas</span>
+        </div>
+
+        <!-- Aston Martin -->
+        <div class="driver-pick-card" data-driver="Fernando Alonso" style="--driver-color: var(--aston);">
+            <span class="code">ALO</span>
+            <span class="name">Fernando Alonso</span>
+            <span class="team">Aston Martin</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Lance Stroll" style="--driver-color: var(--aston);">
+            <span class="code">STR</span>
+            <span class="name">Lance Stroll</span>
+            <span class="team">Aston Martin</span>
+        </div>
+
+        <!-- Audi -->
+        <div class="driver-pick-card" data-driver="Gabriel Bortoleto" style="--driver-color: var(--audi);">
+            <span class="code">BOR</span>
+            <span class="name">Gabriel Bortoleto</span>
+            <span class="team">Audi</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Nico Hulkenberg" style="--driver-color: var(--audi);">
+            <span class="code">HUL</span>
+            <span class="name">Nico Hulkenberg</span>
+            <span class="team">Audi</span>
+        </div>
+
+        <!-- Cadillac -->
+        <div class="driver-pick-card" data-driver="Sergio Perez" style="--driver-color: var(--cadillac);">
+            <span class="code">PER</span>
+            <span class="name">Sergio Perez</span>
+            <span class="team">Cadillac</span>
+        </div>
+
+        <div class="driver-pick-card" data-driver="Valtteri Bottas" style="--driver-color: var(--cadillac);">
+            <span class="code">BOT</span>
+            <span class="name">Valtteri Bottas</span>
+            <span class="team">Cadillac</span>
+        </div>
+
+    </div>
+
+    <button id="confirmDriverBtn">
+      Confirm Driver →
+    </button>
+
+  </div>
+
+  <!-- STEP 3 -->
+
+  <div class="onboard-screen" id="step3">
+
+    <div class="garage-loader">
+
+      <div class="loader-title">
+        INITIALIZING GARAGE
+      </div>
+
+      <div id="loaderDriver"></div>
+
+      <div class="loader-lines">
+
+        <div>Loading telemetry...</div>
+        <div>Loading championship data...</div>
+        <div>Loading paddock intel...</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
 <div class="ticker-wrap">
   <div class="ticker-track" id="tkTrack"></div>
 </div>
@@ -44,15 +278,19 @@
       <span>Personal Edition · F1 2026</span>
     </div>
     <div class="brand-right">
-      <div class="greeting" id="greeting">Good morning, Anjan</div>
+      <div class="greeting" id="greeting"></div>
       <div class="dateline" id="dateline"></div>
     </div>
   </div>
 
   <div class="title-wrap">
     <h1 class="hero-title">
-      <span class="line1"><span>Anjan's</span></span>
-      <span class="line2"><span>Race Trace.</span></span>
+        <span class="line1">
+            <span id="heroOwner">Driver's</span>
+        </span>
+        <span class="line2">
+            <span>Race Trace.</span>
+        </span>
     </h1>
     <div class="title-underline"></div>
   </div>
@@ -102,6 +340,61 @@
       </div>
     </div>
   </div>
+</section>
+
+<section class="favorite-driver-section">
+
+  <div class="favorite-driver-card">
+
+    <div class="fd-header">
+
+      <div class="fd-label">
+        YOUR DRIVER
+      </div>
+
+      <div class="fd-status">
+        PERSONAL WATCHLIST
+      </div>
+
+    </div>
+
+    <div class="fd-content">
+
+      <div class="fd-main">
+
+        <div class="fd-name" id="favDriverName">
+          Lewis Hamilton
+        </div>
+
+        <div class="fd-team" id="favDriverTeam">
+          Ferrari
+        </div>
+
+      </div>
+
+      <div class="fd-stats">
+
+        <div class="fd-stat">
+          <span class="fd-stat-label">Position</span>
+          <span class="fd-stat-value" id="favDriverPos">P4</span>
+        </div>
+
+        <div class="fd-stat">
+          <span class="fd-stat-label">Points</span>
+          <span class="fd-stat-value" id="favDriverPoints">41</span>
+        </div>
+
+        <div class="fd-stat">
+          <span class="fd-stat-label">Team</span>
+          <span class="fd-stat-value" id="favDriverTeamShort">FER</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <section class="cal-section">
