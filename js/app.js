@@ -1,28 +1,236 @@
+const driverData = {
+
+  "Lewis Hamilton": {
+    team:"Ferrari",
+    pos:"P4",
+    points:"41",
+    short:"FER"
+  },
+
+  "Charles Leclerc": {
+    team:"Ferrari",
+    pos:"P3",
+    points:"49",
+    short:"FER"
+  },
+
+  "Max Verstappen": {
+    team:"Red Bull",
+    pos:"P9",
+    points:"12",
+    short:"RBR"
+  },
+
+  "Lando Norris": {
+    team:"McLaren",
+    pos:"P5",
+    points:"25",
+    short:"MCL"
+  },
+
+  "Oscar Piastri": {
+    team:"McLaren",
+    pos:"P6",
+    points:"21",
+    short:"MCL"
+  },
+
+  "George Russell": {
+    team:"Mercedes",
+    pos:"P2",
+    points:"63",
+    short:"MER"
+  },
+
+  "Kimi Antonelli": {
+    team:"Mercedes",
+    pos:"P1",
+    points:"72",
+    short:"MER"
+  },
+
+  "Fernando Alonso": {
+    team:"Aston Martin",
+    pos:"P16",
+    points:"0",
+    short:"AMR"
+  }
+
+};
+
+function updateFavoriteDriver(driver){
+
+  const d = driverData[driver];
+
+  if(!d) return;
+
+  document.getElementById(
+    'favDriverName'
+  ).textContent = driver;
+
+  document.getElementById(
+    'favDriverTeam'
+  ).textContent = d.team;
+
+  document.getElementById(
+    'favDriverPos'
+  ).textContent = d.pos;
+
+  document.getElementById(
+    'favDriverPoints'
+  ).textContent = d.points;
+
+  document.getElementById(
+    'favDriverTeamShort'
+  ).textContent = d.short;
+}
+
 (function(){
+
+let selectedDriver = null;
+
+const overlay =
+document.getElementById('onboardingOverlay');
+
+const step1 =
+document.getElementById('step1');
+
+const step2 =
+document.getElementById('step2');
+
+const step3 =
+document.getElementById('step3');
+
+const savedName =
+localStorage.getItem('rtUserName');
+
+const savedDriver =
+localStorage.getItem('rtFavouriteDriver');
+
+if(savedName && savedDriver){
+
+    initializeDashboard(
+      savedName,
+      savedDriver
+    );
+
+    overlay.style.display = 'none';
+
+    return;
+}
+
+function showStep(step){
+
+  document
+  .querySelectorAll('.onboard-screen')
+  .forEach(s => s.classList.remove('active'));
+
+  step.classList.add('active');
+}
+
+document
+.getElementById('continueBtn')
+.addEventListener('click', () => {
+
+  const name =
+  document
+  .getElementById('userName')
+  .value
+  .trim();
+
+  if(!name) return;
+
+  localStorage.setItem(
+    'rtUserName',
+    name
+  );
+
+  showStep(step2);
+
+});
+
+document
+.querySelectorAll('.driver-pick-card')
+.forEach(card => {
+
+  card.addEventListener('click', () => {
+
+    document
+    .querySelectorAll('.driver-pick-card')
+    .forEach(c => c.classList.remove('selected'));
+
+    card.classList.add('selected');
+
+    selectedDriver =
+    card.dataset.driver;
+
+  });
+
+});
+
+document
+.getElementById('confirmDriverBtn')
+.addEventListener('click', () => {
+
+  if(!selectedDriver) return;
+
+  localStorage.setItem(
+    'rtFavouriteDriver',
+    selectedDriver
+  );
+
+  showStep(step3);
+
+  document.getElementById(
+    'loaderDriver'
+  ).textContent =
+  selectedDriver;
+
+  setTimeout(() => {
+
+      initializeDashboard(
+        localStorage.getItem('rtUserName'),
+        selectedDriver
+      );
+
+      overlay.style.display = 'none';
+
+  },2000);
+
+});
+
+function initializeDashboard(name,driver){
+
   const now = new Date();
-  const h = now.getHours();
 
-  const g =
-    h < 12
-      ? 'Good morning'
-      : h < 17
-      ? 'Good afternoon'
-      : 'Good evening';
+  const greeting =
+    now.getHours() < 12
+    ? 'Good morning'
+    : now.getHours() < 17
+    ? 'Good afternoon'
+    : 'Good evening';
 
-  document.getElementById('greeting').textContent =
-    g + ', Shreya';
+  document.getElementById(
+    'greeting'
+  ).textContent =
+  `${greeting}, ${name}`;
 
-  const D = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
-  const M = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  document.getElementById(
+    'heroOwner'
+  ).textContent =
+  `${name}'s`;
 
-  document.getElementById('dateline').textContent =
-    D[now.getDay()] +
-    ' · ' +
-    String(now.getDate()).padStart(2,'0') +
-    ' ' +
-    M[now.getMonth()] +
-    ' · ' +
-    now.getFullYear();
+  const D=['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  const M=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+
+  document.getElementById(
+    'dateline'
+  ).textContent =
+  `${D[now.getDay()]} · ${String(now.getDate()).padStart(2,'0')} ${M[now.getMonth()]} · ${now.getFullYear()}`;
+
+  updateFavoriteDriver(driver);
+}
+
 })();
 
 (function(){
