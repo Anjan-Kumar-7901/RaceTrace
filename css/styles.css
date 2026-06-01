@@ -1175,6 +1175,216 @@ body {
     0 0 24px rgba(245,158,11,.05);
 }
 
+.favorite-driver-profile{
+
+  margin-top:30px;
+
+  padding:32px;
+
+  background:var(--paper);
+
+  border-top:3px solid var(--driver-accent);
+
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.04),
+    0 0 35px color-mix(
+      in srgb,
+      var(--driver-accent) 12%,
+      transparent
+    );
+}
+
+.fd-top{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:30px;
+
+  padding-bottom:16px;
+
+  border-bottom:
+  1px solid rgba(255,255,255,.06);
+}
+
+.fd-section-label{
+
+  font-family:'JetBrains Mono';
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+  font-size:11px;
+}
+
+.fd-team-line{
+
+  color:var(--driver-accent);
+
+  font-family:'JetBrains Mono';
+
+  font-size:11px;
+}
+
+.fd-main-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  1.8fr 1fr;
+
+  gap:40px;
+}
+
+.fd-left{
+
+  display:flex;
+
+  gap:30px;
+
+  align-items:center;
+}
+
+.fd-number{
+
+  font-size:110px;
+
+  font-family:'Orbitron';
+
+  color:var(--driver-accent);
+
+  font-weight:700;
+
+  line-height:1;
+
+  text-shadow:
+    0 0 25px
+    color-mix(
+      in srgb,
+      var(--driver-accent) 40%,
+      transparent
+    );
+}
+
+.fd-code{
+
+  display:inline-block;
+
+  background:
+  var(--driver-accent);
+
+  color:#000;
+
+  padding:4px 10px;
+
+  font-family:'JetBrains Mono';
+
+  margin-bottom:12px;
+}
+
+.fd-driver-name{
+
+  color: var(--driver-accent);
+
+  font-size:42px;
+
+  font-family:'Orbitron';
+
+  font-weight:700;
+}
+
+.fd-team{
+
+  margin-top:10px;
+
+  color:var(--ink-3);
+}
+
+.fd-stats-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:16px;
+}
+
+.fd-stat-box{
+
+  background:#111114;
+
+  padding:18px;
+  
+  border-top:2px solid var(--driver-accent);
+}
+
+.fd-stat-box span{
+
+  display:block;
+
+  color:var(--ink-3);
+
+  font-size:11px;
+
+  text-transform:uppercase;
+
+  margin-bottom:10px;
+}
+
+.fd-stat-box strong{
+
+  font-size:28px;
+
+  color:var(--driver-accent);
+}
+
+.fd-form-section{
+
+  margin-top:30px;
+}
+
+.fd-form-title{
+
+  font-family:'JetBrains Mono';
+
+  margin-bottom:12px;
+
+  color:var(--ink-3);
+}
+
+.fd-form-row{
+
+  display:flex;
+
+  gap:12px;
+}
+
+.fd-form-row div{
+
+  width:72px;
+
+  height:52px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:#111114;
+
+  border-top:2px solid var(--driver-accent);
+
+  font-family:'Orbitron';
+
+  font-size:18px;
+}
+
 .fd-header{
 
   display:flex;
